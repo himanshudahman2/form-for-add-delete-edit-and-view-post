@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post in Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .post{
+        .post {
             background-color: blanchedalmond;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h2>Here is your Post in detail </h2>
-    <p>post id: <%= post.id %></p>
-    <div class="post">
-        <h3 class="user">@<%=post.username%></h3>
-        <h4><%=post.content%></h4>
-    </div>
+    <div class="container mt-5">
+        <h2>Here is your Post in detail</h2>
+        <p>Post ID: <%= post.id %></p>
+        <div class="card post">
+            <div class="card-body">
+                <h5 class="card-title">@<%= post.username %></h5>
+                <p class="card-text"><%= post.content %></p>
+            </div>
+        </div>
 </body>
 </html>

@@ -44,12 +44,11 @@ app.post("/posts",(req,res)=>{
    posts.push({id,username,content});
     res.redirect("/posts");
 })
-app.get("/posts/:id",(req,res)=>{
-    let {id} = req.params;
-    console.log(id);
-   let post = posts.find((p)=> id === p.id);
-   res.render("show.ejs",{post})
-})
+app.get("/posts/:id", (req, res) => {
+    const post = posts.find((p) => p.id === req.params.id);
+    res.render("show.ejs", { post });
+});
+
 app.patch("/posts/:id",(req,res)=>{
     let {id} = req.params;
     let newcontent = req.body.content;

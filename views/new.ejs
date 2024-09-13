@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create new post</title>
+    <title>Create New Post</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <form method="post" action="/posts">
-        <input placeholder="enter username" name="username"><br><br>
-        <textarea placeholder="write your post" name="content"></textarea> <br>
-       <button>Submit post</button>
-    </form>
-    
+    <div class="container mt-5">
+        <h2>Create New Post</h2>
+        <form method="post" action="/posts">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Post Content</label>
+                <textarea class="form-control" id="content" rows="5" placeholder="Write your post" name="content" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Post</button>
+        </form>
+    </div>
 </body>
 </html>
